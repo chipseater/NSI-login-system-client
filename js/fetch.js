@@ -1,5 +1,5 @@
 function fetchRoute(route, verb) {
-  return new Promise((resolve, rejetct) => {
+  return new Promise((resolve, reject) => {
     fetch(`http://localhost:5000${route}`, {
       method: verb,
       headers: {
@@ -12,20 +12,11 @@ function fetchRoute(route, verb) {
       .then((res) => {
         res
           .json()
-          .then((res) => resolve(res))
-          .catch((err) => rejetct(err))
+          .then(res => resolve(res))
+          .catch(err => reject(err))
       })
-      .catch((err) => {
-        element.innerHTML = err
+      .catch(err => {
+        reject(err)
       })
   })
 }
-
-const element = document.getElementById('hello-world')
-fetchRoute('/', 'GET')
-  .then((res) => {
-    element.innerHTML = res.text
-  })
-  .catch((err) => {
-    console.error(err)
-  })

@@ -24,19 +24,21 @@
         </nav>
     </header>
     <main>
-        <div class="auth-container blur-box">
+        <form onsubmit="submitRegistration" id="register-form" class="auth-container blur-box">
             <h2>S'inscrire</h2>
             <div class="input-row">
-                <input placeholder="Prénom" type="text">
-                <input placeholder="Nom" type="text">
+                <input id="first_name_input" placeholder="Prénom" type="text">
+                <input id="last_name_input" placeholder="Nom" type="text">
             </div>
-            <input placeholder="Email" type="text">
-            <input placeholder="Mot de passe" type="password">
-            <input placeholder="Répéter le mot de passe" type="password">
+            <input id="email_input" placeholder="Email" type="text">
+            <input id="passwd_input" placeholder="Mot de passe" type="password">
+            <input id="passwd_repeat_input" placeholder="Répéter le mot de passe" type="password">
             <div class="submit-box">
                 <input value="Envoyer" type="submit">
             </div>
-        </div>
+        </form>
     </main>
 </body>
+<script src="../js/fetch.js"></script>
+<script src="../js/register.js"></script>
 </html>
