@@ -42,6 +42,9 @@ function submitRegistration(event) {
             message_box.classList.toggle('green')
             message_box.classList.remove('red')
 
+            setTimeout(() => {
+                window.location.href = '/'
+            }, 3000)
         })
         .catch(err => {
             console.error(err)
