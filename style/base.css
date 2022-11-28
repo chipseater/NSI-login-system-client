@@ -8,6 +8,7 @@
 * {
     font-family: 'Roboto';
     --primary: #166534;
+    --danger: #dc2626;
 }
 
 h1 {

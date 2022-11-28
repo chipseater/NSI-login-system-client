@@ -24,7 +24,10 @@
         </nav>
     </header>
     <main>
-        <form onsubmit="submitRegistration" id="register-form" class="auth-container blur-box">
+        <form onsubmit="submitRegistration(event)" id="register-form" class="auth-container blur-box">
+            <div class="message-container">
+                <div id="message-box"></div>
+            </div>
             <h2>S'inscrire</h2>
             <div class="input-row">
                 <input id="first_name_input" placeholder="Prénom" type="text">
