@@ -14,6 +14,11 @@ function submitLogin(event) {
         passwd: passwd,
     })
         .then(res => {
+            if (res['error']) {
+                displayError("Mauvais email / mot de passe")
+                return
+            }
+
             localStorage.setItem("access_token", res['access_token'])
             localStorage.setItem("refresh_token", res['refresh_token'])
             localStorage.setItem("expiration_date", Date.now() + 550000)
