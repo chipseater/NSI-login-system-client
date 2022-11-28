@@ -1,6 +1,6 @@
 function fetchRoute(route, verb, data={}) {
   return new Promise((resolve, reject) => {
-    fetch(`https://5000-chipseater-nsiloginsyst-qsj521wbgao.ws-eu77.gitpod.io${route}`, {
+    fetch(`http://localhost:5000${route}`, {
       method: verb,
       headers: {
         'Content-Type': 'application/json',

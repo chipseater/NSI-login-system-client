@@ -1,25 +1,15 @@
-function submitRegistration(event) {
+function submitLogin(event) {
     event.preventDefault()
 
-    first_name = document.getElementById('first_name_input').value
-    last_name = document.getElementById('last_name_input').value
     email = document.getElementById('email_input').value
     passwd = document.getElementById('passwd_input').value
-    passwd_repeat = document.getElementById('passwd_repeat_input').value
 
-    if (passwd != passwd_repeat) {
-        displayError("Les mots de passe ne correspondent pas")
-        return
-    }
-
-    if (first_name == '' || last_name == '' || email == '' || passwd == '') {
+    if (email == '' || passwd == '') {
         displayError("Veuillez remplir tout les champs")
         return
     }
 
-    fetchRoute('/register', 'POST', {
-        first_name: first_name,
-        last_name: last_name,
+    fetchRoute('/login', 'POST', {
         email: email,
         passwd: passwd,
     })
@@ -28,7 +18,7 @@ function submitRegistration(event) {
             localStorage.setItem("refresh_token", res['refresh_token'])
             localStorage.setItem("expiration_date", Date.now() + 550000)
 
-            displaySuccess("Vous avez bien été enregistré")
+            displaySuccess("Vous vous êtes bien connectés")
 
             setTimeout(() => {
                 window.location.href = '/'

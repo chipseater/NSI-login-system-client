@@ -26,7 +26,23 @@ a {
     text-decoration: none;
 }
 
+.red {
+    background-color: var(--danger);
+}
+
+.green {
+    background-color: var(--primary);
+}
+
 .blur-box {
     backdrop-filter: blur(20px);
     box-shadow: 11px 10px 63px -19px rgba(0,0,0,0.68);
+}
+
+#message-box {
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+    font-weight: bold;
 }

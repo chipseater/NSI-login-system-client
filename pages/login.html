@@ -24,14 +24,20 @@
         </nav>
     </header>
     <main>
-        <div class="auth-container blur-box">
+        <form onsubmit="submitLogin(event)" class="auth-container blur-box">
+            <div class="message-container">
+                <div id="message-box"></div>
+            </div>
             <h2>Se connecter</h2>
-            <input placeholder="Email" type="text">
-            <input placeholder="Mot de passe" type="password">
+            <input id="email_input" placeholder="Email" type="text">
+            <input id="passwd_input" placeholder="Mot de passe" type="password">
             <div class="submit-box">
                 <input type="submit" value="Envoyer">
             </div>
-        </div>
+        </form>
     </main>
 </body>
+<script src="../js/utils.js"></script>
+<script src="../js/fetch.js"></script>
+<script src="../js/login.js"></script>
 </html>

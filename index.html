@@ -20,11 +20,19 @@
             Vos documents
         </a></h1>
         <nav>
-            <a href="/pages/login.html">Se connecter</a>
-            <a href="/pages/register.html">S'inscrire</a>
+            <div id="not-logged-in">
+                <a href="/pages/login.html">Se connecter</a>
+                <a href="/pages/register.html">S'inscrire</a>
+            </div>
+            <div id="logged-in" style="display: none">
+                <a id="logout_button" onclick="logout()">Se déconnecter</a>
+            </div>
         </nav>
     </header>
     <main>
+        <div class="message-container">
+            <div id="message-box"></div>
+        </div>
         <div class="card blur-box">
             <span class="material-symbols-outlined">
                 info
@@ -36,4 +44,6 @@
     </main>
 </body>
 <script src="js/fetch.js"></script>
+<script src="js/utils.js"></script>
+<script defer src="js/index.js"></script>
 </html>
