@@ -27,7 +27,7 @@ function submitLogin(event) {
 
             setTimeout(() => {
                 window.location.href = '/'
-            }, 2000)
+            }, 500)
         })
         .catch(err => {
             console.error(err)

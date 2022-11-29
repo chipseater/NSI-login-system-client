@@ -11,13 +11,24 @@ if (token) {
     logged_in_container.style.display = 'none'
 }
 
+fetchRoute('/', 'GET')
+    .then(res => {
+        console.log(res)
+    })
+
 function logout() {
-    localStorage.setItem('access_token', '')
-    localStorage.setItem('refresh_token', '')
-
-    displaySuccess('Vous êtes bien déconnectés')
-
-    setTimeout(() => {
-        window.location.href = '/'
-    }, 2000)
+    fetchRoute('/logout', 'POST', data={
+        refresh_token: localStorage.getItem('refresh_token')
+    })
+        .then(_ => {
+            localStorage.setItem('access_token', '')
+            localStorage.setItem('refresh_token', '')
+            
+            displaySuccess('Vous êtes bien déconnectés')
+            
+            setTimeout(() => {
+                window.location.href = '/'
+            }, 500)
+        })
+        .catch(err => console.error(err))
 }
