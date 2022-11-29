@@ -11,6 +11,7 @@ function getToken() {
         .then((res) => {
           if (res.error) reject(res.error)
           localStorage.setItem('access_token', res['access_token'])
+          localStorage.setItem('refresh_token', res['refresh_token'])
           resolve(res['access_token'])
         })
         .catch((err) => reject(err))

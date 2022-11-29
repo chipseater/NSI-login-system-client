@@ -12,8 +12,12 @@ if (token) {
 }
 
 fetchRoute('/', 'GET', true)
-    .then(res => {
-        console.log(res)
+    .then(({ user_id }) => {
+        if (!user_id) {
+            document.getElementById('splash-text').innerHTML = 'Veuillez vous connecter pour accéder à votre contenu'
+        } else {
+            document.getElementById('splash-text').innerHTML = `Votre identifiant est ${user_id}`
+        }
     })
 
 function logout() {
