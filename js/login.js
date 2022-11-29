@@ -9,7 +9,7 @@ function submitLogin(event) {
         return
     }
 
-    fetchRoute('/login', 'POST', {
+    fetchRoute('/login', 'POST', false, data={
         email: email,
         passwd: passwd,
     })
