@@ -12,6 +12,7 @@ function getToken() {
           if (res.error) reject(res.error)
           localStorage.setItem('access_token', res['access_token'])
           localStorage.setItem('refresh_token', res['refresh_token'])
+          localStorage.setItem('expiration_date', Date.now() + 550000)
           resolve(res['access_token'])
         })
         .catch((err) => reject(err))
