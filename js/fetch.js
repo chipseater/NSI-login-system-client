@@ -1,8 +1,10 @@
 function getToken() {
   return new Promise((resolve, reject) => {
     const exp = Number(localStorage.getItem('expiration_date'))
+    refresh_token = localStorage.getItem('refresh_token')
 
     if (!exp) resolve('')
+    if (refresh_token && refresh_token == 'undefined') resolve(null)
     if (Date.now() > exp) {
       data = {
         refresh_token: localStorage.getItem('refresh_token')
@@ -25,7 +27,7 @@ function getToken() {
 function fetchRoute(route, verb, useToken, data = {}) {
   console.log(useToken)
   return new Promise((resolve, reject) => {
-    if (useToken) {
+    if (useToken && localStorage.getItem('refresh_token')) {
       getToken()
         .then((token) => {
           console.log(token)

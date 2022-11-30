@@ -3,7 +3,8 @@ logged_in_container = document.getElementById('logged-in')
 
 token = localStorage.getItem('access_token')
 
-if (token) {
+if (token && token != 'undefined') {
+    console.log(token)
     not_logged_in_container.style.display = 'none'
     logged_in_container.style.display = 'flex'
 } else {
