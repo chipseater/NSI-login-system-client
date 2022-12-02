@@ -6,6 +6,7 @@ main {
 }
 
 .auth-container {
+    box-shadow: 11px 10px 63px -19px rgba(0,0,0,0.68);
     width: 600px;
     height: fit-content;
     border-radius: 15px;
