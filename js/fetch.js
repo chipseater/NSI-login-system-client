@@ -30,7 +30,6 @@ function fetchRoute(route, verb, useToken, data = {}) {
     if (useToken && localStorage.getItem('refresh_token')) {
       getToken()
         .then((token) => {
-          console.log(token)
           fetchWithToken(route, verb, data, token)
             .then((res) => resolve(res))
             .catch((err) => reject(err))
