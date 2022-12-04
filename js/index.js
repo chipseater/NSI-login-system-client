@@ -1,6 +1,5 @@
 fetchRoute('/get-todos', 'GET', true)
     .then(res => {
-        console.log(res)
         res.todos.forEach(({ name, date }) => {
             document.getElementById('main-container').innerHTML += `<div class="card blur-box">
                 <span class="material-symbols-outlined checkbox">
@@ -16,7 +15,7 @@ fetchRoute('/get-todos', 'GET', true)
                             <div class="material-symbols-outlined cyan-hover">edit</div>
                             <div class="material-symbols-outlined green-hover">add</div>
                         </div>
-                        <div class="date">${date}</div>
+                        <div class="date">${fomatDate(date)}</div>
                     </div>
                 </div>
             </div>
