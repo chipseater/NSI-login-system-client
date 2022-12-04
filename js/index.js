@@ -13,7 +13,6 @@ fetchRoute('/get-todos', 'GET', true)
                         <div class="bottom-buttons">
                             <div class="material-symbols-outlined red-hover">delete</div>
                             <div class="material-symbols-outlined cyan-hover">edit</div>
-                            <div class="material-symbols-outlined green-hover">add</div>
                         </div>
                         <div class="date">${fomatDate(date)}</div>
                     </div>

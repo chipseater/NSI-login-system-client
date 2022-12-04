@@ -17,6 +17,7 @@ h1 {
 
 body {
     margin: 0;
+    overflow-x: hidden;
     color: white;
     background: url("../assets/login-background.png");
     background-size: cover;
@@ -38,10 +39,70 @@ a {
     backdrop-filter: blur(20px);
 }
 
+#overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #000b;
+    z-index: 9;
+}
+
+.display-none {
+    display: none;
+}
+
 #message-box {
     padding: 10px;
     border-radius: 10px;
     width: 80%;
     text-align: center;
     font-weight: bold;
+}
+
+#popup-container {
+    position: absolute;
+    z-index: 10;
+    left:50%;
+    right: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#popup-container .popup {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    background-color: #fff2;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: large;
+}
+
+.popup-top-bar {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.popup-top-bar .material-symbols-outlined {
+    cursor: pointer;
+}
+
+.popup-title {
+    font-size: x-large;
+}
+
+@media (max-width: 768px) {
+    #popup-container .popup {
+        width: 90%;
+    }
 }

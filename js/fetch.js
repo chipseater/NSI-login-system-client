@@ -63,7 +63,7 @@ function fetchWithToken(route, verb, data = {}, token = null) {
   }
 
   return new Promise((resolve, reject) => {
-    fetch(`http://localhost:5000${route}`, fetchParams)
+    fetch(`https://5000-chipseater-nsiloginsyst-a06g6lrptu9.ws-eu77.gitpod.io${route}`, fetchParams)
       .then((res) => {
         res
           .json()
