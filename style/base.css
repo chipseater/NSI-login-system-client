@@ -51,7 +51,7 @@ a {
 }
 
 .display-none {
-    display: none;
+    display: none !important;
 }
 
 #message-box {
@@ -62,22 +62,14 @@ a {
     font-weight: bold;
 }
 
-#popup-container {
-    position: absolute;
-    z-index: 10;
-    left:50%;
-    right: 50%;
-    transform: translateX(-50%);
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#popup-container .popup {
+#popup-container #popup {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
     flex-direction: column;
     width: 40%;
     background-color: #fff2;
@@ -99,6 +91,40 @@ a {
 
 .popup-title {
     font-size: x-large;
+}
+
+#popup-content input[type="text"] {
+    background-color: #fffe;
+    outline: none;
+    height: 30px;
+    width: calc(100% - 30px);
+    border: 3px solid gray;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
+}
+
+#popup-content input[type="submit"] {
+    border: 3px solid var(--primary);
+    color: var(--primary);
+    font-size: large;
+    font-weight: bold;
+    border-radius: 15px;
+    margin: 5px;
+    cursor: pointer;
+    width: 200px;
+    height: 40px;
+}
+
+#popup-content input[type="text"]:focus {
+    background-color: #fffe;
+    outline: none;
+    height: 30px;
+    width: calc(100% - 30px);
+    border: 3px solid var(--primary);
+    border-radius: 10px;
+    margin: 10px;
+    padding: 5px;
 }
 
 @media (max-width: 768px) {

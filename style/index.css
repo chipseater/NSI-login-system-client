@@ -66,6 +66,7 @@ main {
     display: block;
     cursor: pointer;
     transition: all;
+    user-select: none;
     transition-duration: 0.2s;
 }
 
@@ -99,4 +100,21 @@ main {
     flex-wrap: wrap;
     margin-top: 100px;
     height: fit-content;
+}
+
+.plus-card {
+    width: 200px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.plus-card .card-content {
+    width: fit-content;
+}
+
+.plus-card .card-content .material-symbols-outlined {
+    font-size: 24px;
 }

@@ -25,7 +25,6 @@ function getToken() {
 }
 
 function fetchRoute(route, verb, useToken, data = {}) {
-  console.log(useToken)
   return new Promise((resolve, reject) => {
     if (useToken && localStorage.getItem('refresh_token')) {
       getToken()
@@ -63,7 +62,7 @@ function fetchWithToken(route, verb, data = {}, token = null) {
   }
 
   return new Promise((resolve, reject) => {
-    fetch(`https://5000-chipseater-nsiloginsyst-a06g6lrptu9.ws-eu77.gitpod.io${route}`, fetchParams)
+    fetch(`https://5000-chipseater-nsiloginsyst-sj6flwyx1yd.ws-eu77.gitpod.io${route}`, fetchParams)
       .then((res) => {
         res
           .json()

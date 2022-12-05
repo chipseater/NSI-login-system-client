@@ -33,4 +33,13 @@ fetchRoute('/get-todos', 'GET', true)
               })
             })
         })
+
+        document.getElementById('main-container').innerHTML += `
+        <div class="card blur-box plus-card" onclick="displayPopup('Ajouter une todo')">
+            <div class="card-content">
+                <div class="material-symbols-outlined">add</div>
+            </div>
+        </div>
+        `
     })
+

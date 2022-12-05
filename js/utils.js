@@ -12,25 +12,26 @@ function displayError(message) {
     message_box.classList.remove('green')
 }
 
-function togglePopupVisibility(popup, overlay) {
+function togglePopupVisibility(popup, overlay, popup_container) {
     popup.classList.toggle('display-none')
+    popup_container.classList.toggle('display-none')
     overlay.classList.toggle('display-none')
 }
 
-function displayPopup(title, message) {
+function displayPopup(title) {
     const popup = document.getElementById('popup')
+    const popup_container = document.getElementById('popup-container')
     const overlay = document.getElementById('overlay')
     const close_btn = document.getElementById('close-btn')
-    const popup_text = document.getElementById('popup-text')
     const popup_title = document.getElementById('popup-title')
+    const popup_content = document.getElementById('popup-content')
 
-    togglePopupVisibility(popup, overlay)
+    togglePopupVisibility(popup, overlay, popup_container)
 
-    popup_text.innerText = message
-    popup_text.innerText = title
+    popup_title.innerText = title
 
-    close_btn.onclick = () => togglePopupVisibility(popup, overlay)
-    overlay.onclick = () => togglePopupVisibility(popup, overlay)
+    close_btn.onclick = () => togglePopupVisibility(popup, overlay, popup_container)
+    overlay.onclick = () => togglePopupVisibility(popup, overlay, popup_container)
 }
 
 function fomatDate(date_string) {
