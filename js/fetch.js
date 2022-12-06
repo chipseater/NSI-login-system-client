@@ -14,7 +14,7 @@ function getToken() {
           if (res.error) reject(res.error)
           localStorage.setItem('access_token', res['access_token'])
           localStorage.setItem('refresh_token', res['refresh_token'])
-          localStorage.setItem('expiration_date', Date.now() + 550000)
+          localStorage.setItem('expiration_date', Date.now() + 55000)
           resolve(res['access_token'])
         })
         .catch((err) => reject(err))
@@ -62,7 +62,7 @@ function fetchWithToken(route, verb, data = {}, token = null) {
   }
 
   return new Promise((resolve, reject) => {
-    fetch(`https://5000-chipseater-nsiloginsyst-sj6flwyx1yd.ws-eu77.gitpod.io${route}`, fetchParams)
+    fetch(`https://5000-chipseater-nsiloginsyst-25hn8oap7yi.ws-eu77.gitpod.io${route}`, fetchParams)
       .then((res) => {
         res
           .json()

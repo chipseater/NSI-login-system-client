@@ -27,6 +27,10 @@ a {
     text-decoration: none;
 }
 
+.important {
+    background-color: #b00a !important;
+}
+
 .red {
     background-color: var(--danger);
 }

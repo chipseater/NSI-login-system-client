@@ -44,8 +44,8 @@
             <div id="popup-title" class="popup-title"></div>
             <div id="close-btn" class="material-symbols-outlined">close</div>
           </div>
-          <form id="popup-content">
-            <input type="text" />
+          <form onsubmit="submitCreate(event)" id="popup-content">
+            <input id="name-input" type="text" placeholder="Nom" />
             <input type="submit" value="Créer la todo">
           </form>
         </div>  
