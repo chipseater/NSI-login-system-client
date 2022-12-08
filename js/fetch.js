@@ -62,7 +62,7 @@ function fetchWithToken(route, verb, data = {}, token = null) {
   }
 
   return new Promise((resolve, reject) => {
-    fetch(`https://5000-chipseater-nsiloginsyst-25hn8oap7yi.ws-eu77.gitpod.io${route}`, fetchParams)
+    fetch(`https://5000-chipseater-nsiloginsyst-gqf8fjujj2b.ws-eu77.gitpod.io${route}`, fetchParams)
       .then((res) => {
         res
           .json()
