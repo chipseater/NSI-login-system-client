@@ -29,9 +29,14 @@ function displayPopup(title) {
     togglePopupVisibility(popup, overlay, popup_container)
 
     popup_title.innerText = title
+    document.getElementById('name-input').focus()
 
     close_btn.onclick = () => togglePopupVisibility(popup, overlay, popup_container)
     overlay.onclick = () => togglePopupVisibility(popup, overlay, popup_container)
+    // popup_content.onsubmit = (event) => {
+    //     setTimeout(() => togglePopupVisibility(popup, overlay, popup_container), 1000)
+        
+    // }
 }
 
 function fomatDate(date_string) {
