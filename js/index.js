@@ -110,8 +110,8 @@ function toggle_edit_name(container_id, id, important, done) {
 
     name_container.innerHTML = `
         <form class="name-editor-container" onsubmit="">
-            <input id="name-editor-${id}" value="${name_container.innerText}" />
-            <input id="name-editor-${id}-submit" type="submit" />
+            <input class="name-editor" id="name-editor-${id}" value="${name_container.innerText}" />
+            <input class="name-submit-btn" id="name-editor-${id}-submit" value="Modifier" type="submit" />
         </form>
     `
 
@@ -120,6 +120,7 @@ function toggle_edit_name(container_id, id, important, done) {
         const input_field = document.getElementById(`name-editor-${id}`)
         const name = input_field.value
         edit_name(id, name, important, done)
+        fetchTodos()
     }
 }
 

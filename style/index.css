@@ -124,3 +124,31 @@ main {
 .plus-card .card-content .material-symbols-outlined {
     font-size: 24px;
 }
+
+.name-editor {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid white;
+    background-color: transparent;
+    outline: none;
+    color: white;
+}
+
+.name-editor:focus {
+    border: 2px solid #0c7e38;
+}
+
+.name-submit-btn {
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+}
+
+.name-submit-btn:hover {
+    border: 2px solid #0c7e38;
+    background-color: white;
+    font-weight: bold;
+    color: #0c7e38;
+}
