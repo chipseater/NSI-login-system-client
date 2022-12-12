@@ -22,7 +22,7 @@ function fetchTodos() {
                                 }" onclick="toggle_important(event, ${id}, '${name}', ${important}, ${done})">
                                     priority_high
                                 </div>
-                                <div class="material-symbols-outlined cyan-hover" onclick="toggle_edit_name('${'card-name-' + id}')">edit</div>
+                                <div class="material-symbols-outlined cyan-hover" onclick="toggle_edit_name('${'card-name-' + id}', ${id}, ${important}, ${done})">edit</div>
                             </div>
                             <div class="date">${fomatDate(date)}</div>
                         </div>
@@ -66,7 +66,7 @@ function submitCreate(event) {
         })
 }
 
-function check (event, id, name, important, done) {
+function check(event, id, name, important, done) {
     if (event.target.innerHTML == "check_box") {
         // Uncheck the box
         event.target.innerHTML = "check_box_outline_blank"
@@ -94,8 +94,19 @@ function toggle_important(event, id, name, important, done) {
 
 }
 
-function toggle_edit_name(id) {
-    const name_container = document.getElementById(id)
+function edit_name(id, name, important, done) {
+    fetchRoute("/update-todo", "PATCH", true, {
+        id: id,
+        done: done,
+        name: name,
+        important: important,
+    })
+    fetchTodos()
+
+}
+
+function toggle_edit_name(container_id, id, important, done) {
+    const name_container = document.getElementById(container_id)
 
     name_container.innerHTML = `
         <form class="name-editor-container" onsubmit="">
@@ -104,8 +115,12 @@ function toggle_edit_name(id) {
         </form>
     `
 
-    document.getElementById(`name-editor-${id}`)
-    document.getElementById(`name-editor-${id}-submit`).onsubmit = "1";
+    document.getElementById(`name-editor-${id}-submit`).onclick = (event) => {
+        event.preventDefault()
+        const input_field = document.getElementById(`name-editor-${id}`)
+        const name = input_field.value
+        edit_name(id, name, important, done)
+    }
 }
 
 fetchTodos()
